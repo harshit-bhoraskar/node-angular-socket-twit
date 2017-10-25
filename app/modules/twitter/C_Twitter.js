@@ -4,7 +4,8 @@ var express = require('express'),
     Twit = new require('twit')(require('../../config/Conf_Twitter'));
 
 
-TwitRouter.get('/getTrendingTweets', function(req, res) {
+TwitRouter.get('/getTrendingTopics', function(req, res) {
+    // returns rending topics.
     Twit.get('trends/place', _.assignIn({
         id: 1940345,
         limit: 25
