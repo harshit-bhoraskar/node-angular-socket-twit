@@ -1,0 +1,18 @@
+<h4 class="text-center"> Top 25 trending topics of <strong>DUBAI</strong></h4>
+<div class="container">
+    <div ng-repeat="obj in topics" class="notice notice-info" data-query="{{obj.query}}">
+        <ul class="list-inline topic-list" ui-sref="tweet({q:'{{obj.query}}'})">
+            <li>
+                <span class="">Topic Name</span>
+                <span class="" title="{{obj.name}}">{{obj.name}}</span>
+            </li>
+            <li>
+                <span class="">Total Tweets</span>
+                <span>{{obj.tweet_volume || '-'}}</span>
+            </li>
+            <li>
+                <a target='_blank' href="{{obj.url}}"><i class="pull-right twitter-link fa fa-twitter" title="Twitter Link"></i></a>
+            </li>
+        </ul>
+    </div>
+</div>

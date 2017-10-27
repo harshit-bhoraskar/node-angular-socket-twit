@@ -4,8 +4,8 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "dev": "NODE_ENV=development node server.js",
-    "start": "node server.js",
+    "dev": "gulp dev",
+    "start": "gulp",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -24,16 +24,22 @@
     "angular-resource": "^1.6.6",
     "angular-sanitize": "^1.6.6",
     "angular-ui-router": "^0.4.3",
+    "animate.css": "^3.5.2",
     "body-parser": "^1.18.2",
     "bootstrap": "^3.3.7",
     "cookie-parser": "^1.4.3",
     "express": "^4.16.2",
-    "gulp": "^3.9.1",
-    "gulp-clean": "^0.3.2",
+    "font-awesome": "^4.7.0",
     "http": "0.0.0",
     "lodash": "^4.17.4",
     "morgan": "^1.9.0",
+    "oclazyload": "^1.1.0",
     "socket.io": "^2.0.4",
     "twit": "^2.2.9"
+  },
+  "devDependencies": {
+    "gulp-nodemon": "^2.2.1",
+    "gulp": "^3.9.1",
+    "gulp-clean": "^0.3.2"
   }
 }

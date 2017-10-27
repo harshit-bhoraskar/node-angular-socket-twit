@@ -10,10 +10,15 @@ TwitRouter.get('/getTrendingTopics', function(req, res) {
         id: 1940345,
         limit: 25
     }, req.params), function(err, data, response) {
-        res.json({
-            RESULT_CODE: '1',
-            DATA: data && _.head(data) ? _.head(data).trends : []
-        });
+        try {
+            res.json({
+                RESULT_CODE: '1',
+                DATA: data && _.head(data) ? _.head(data).trends.slice(0, 25) : []
+            });
+        } catch (e) {
+            console.log(e)
+        }
+
     });
 });
 module.exports = TwitRouter
