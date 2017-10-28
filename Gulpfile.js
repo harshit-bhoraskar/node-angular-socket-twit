@@ -11,7 +11,8 @@ var gulp = require('gulp'),
         './node_modules/oclazyload/dist/ocLazyLoad.min.js',
         './node_modules/animate.css/animate.min.css',
         './node_modules/font-awesome/css/font-awesome.min.css',
-        './node_modules/font-awesome/fonts/**/*'
+        './node_modules/font-awesome/fonts/**/*',
+        './node_modules/socket.io-client/dist/socket.io.slim.js'
     ],
     destination = './public/assets/';
 

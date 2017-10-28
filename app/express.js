@@ -5,7 +5,8 @@
      express = require('express'),
      public = path.join(__dirname + '../public/')
 
- module.exports = function(app) {
+ module.exports = function(options) {
+     var app = options.app;
      if (process.env.NODE_ENV === 'development') {
          app.use(morgan('dev'));
      }
