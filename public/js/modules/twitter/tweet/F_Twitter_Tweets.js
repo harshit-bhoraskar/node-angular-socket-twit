@@ -1,5 +1,5 @@
 'use strict';
-angular.module('tweet', [])
+angular.module('tweet')
     .factory('FTwitterTweet', ['$http', 'config', function($http, config) {
         return {
             getTweet: function(param) {

@@ -1,5 +1,5 @@
 'use strict';
-angular.module('tweet', [])
+angular.module('tweet')
     .controller('CTwitterTweet', [
         '$scope',
         '$stateParams',

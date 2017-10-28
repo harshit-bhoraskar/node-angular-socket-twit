@@ -10,19 +10,30 @@ angular.module('baseModel').config(['$ocLazyLoadProvider', '$stateProvider', '$u
             'debug': true, // For debugging 'true/false'
             'events': true, // For Event 'true/false'
             'modules': [{ // Set modules initially
-                name: 'topic',
-                files: [
-                    'js/modules/twitter/topic/C_Twitter_Topics.js',
-                    'js/modules/twitter/topic/F_Twitter_Topics.js',
-                    'js/modules/twitter/topic/topic.css'
-                ],
-            }, {
-                name: 'tweet',
-                files: [
-                    'js/modules/twitter/tweet/C_Twitter_Tweets.js',
-                    'js/modules/twitter/tweet/tweet.css'
-                ]
-            }]
+                    name: 'site',
+                    files: [
+                        'js/modules/site/M_Site.js',
+                        'js/modules/site/D_Site.js',
+                        'js/modules/site/site.css'
+                    ]
+                },
+                {
+                    name: 'topic',
+                    files: [
+                        'js/modules/twitter/topic/M_Twitter_Topics.js',
+                        'js/modules/twitter/topic/C_Twitter_Topics.js',
+                        'js/modules/twitter/topic/F_Twitter_Topics.js',
+                        'js/modules/twitter/topic/topic.css'
+                    ],
+                }, {
+                    name: 'tweet',
+                    files: [
+                        'js/modules/twitter/topic/M_Twitter_Tweets.js',
+                        'js/modules/twitter/tweet/C_Twitter_Tweets.js',
+                        'js/modules/twitter/tweet/tweet.css'
+                    ]
+                }
+            ]
         });
 
         // states for my app
@@ -33,7 +44,7 @@ angular.module('baseModel').config(['$ocLazyLoadProvider', '$stateProvider', '$u
                 templateUrl: 'js/modules/twitter/topic/V_Twitter_Topics.html',
                 resolve: {
                     loadMyCtrl: ['$ocLazyLoad', function($ocLazyLoad) {
-                        return $ocLazyLoad.load('topic'); // Resolve promise and load before view 
+                        return $ocLazyLoad.load(['site', 'topic'], { serie: true }); // Resolve promise and load before view 
                     }]
                 }
             }).state('tweet', {
@@ -42,7 +53,7 @@ angular.module('baseModel').config(['$ocLazyLoadProvider', '$stateProvider', '$u
                 templateUrl: 'js/modules/twitter/tweet/V_Twitter_Tweets.html',
                 resolve: {
                     loadMyCtrl: ['$ocLazyLoad', function($ocLazyLoad) {
-                        return $ocLazyLoad.load('tweet'); // Resolve promise and load before view 
+                        return $ocLazyLoad.load(['site', 'tweet'], { serie: true }); // Resolve promise and load before view 
                     }]
                 }
             });
