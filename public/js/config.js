@@ -28,8 +28,9 @@ angular.module('baseModel').config(['$ocLazyLoadProvider', '$stateProvider', '$u
                 }, {
                     name: 'tweet',
                     files: [
-                        'js/modules/twitter/topic/M_Twitter_Tweets.js',
+                        'js/modules/twitter/tweet/M_Twitter_Tweets.js',
                         'js/modules/twitter/tweet/C_Twitter_Tweets.js',
+                        'js/modules/twitter/tweet/F_Twitter_Tweets.js',
                         'js/modules/twitter/tweet/tweet.css'
                     ]
                 }
@@ -40,7 +41,7 @@ angular.module('baseModel').config(['$ocLazyLoadProvider', '$stateProvider', '$u
         $stateProvider
             .state('topic', {
                 url: '/',
-                controller: 'CTwitterTopic', // This view will use AppCtrl loaded below in the resolve
+                controller: 'CTwitterTopic',
                 templateUrl: 'js/modules/twitter/topic/V_Twitter_Topics.html',
                 resolve: {
                     loadMyCtrl: ['$ocLazyLoad', function($ocLazyLoad) {
@@ -48,8 +49,8 @@ angular.module('baseModel').config(['$ocLazyLoadProvider', '$stateProvider', '$u
                     }]
                 }
             }).state('tweet', {
-                url: '/tweet/:q',
-                controller: 'CTwitterTweet', // This view will use AppCtrl loaded below in the resolve
+                url: '/tweet?tn',
+                controller: 'CTwitterTweet',
                 templateUrl: 'js/modules/twitter/tweet/V_Twitter_Tweets.html',
                 resolve: {
                     loadMyCtrl: ['$ocLazyLoad', function($ocLazyLoad) {
@@ -67,8 +68,6 @@ angular.module('baseModel').config(['$locationProvider',
     }
 ]);
 
-angular.module('baseModel').constant('config', {
-    apiUrl: 'https://your-api.com',
-    baseUrl: '/',
-    enableDebug: true
+angular.module('baseModel').constant("config", {
+    twitApiBaseUrl: "api/twit/" // module based API base path
 });

@@ -1,1 +1,33 @@
-<h3>Tweets</h3>
+<div class="container tweet">
+    <div class="panel panel-default">
+        <div class="panel-heading clearfix">
+            <h4 class="panel-title pull-left" style="padding-top: 7.5px;">Tweets of <strong>{{topicName}}</strong></h4>
+            <div class="btn-group pull-right">
+                <select ng-model="resultType" ng-change="getTopicTweet()">
+                    <option value="recent" selected>Recent</option>
+                    <option value="mixed">Mixed</option>
+                    <option value="popular">Popular</option>
+                </select>
+            </div>
+        </div>
+        <div class="panel-body">
+            <div class="new-tweet-box animated slideInDown" ng-click="showNewTweet()" ng-show="newTweet">New Twittes available</div>
+            <twitter-loader show-loader="showLoader"></twitter-loader>
+            <div ng-repeat="obj in tweet" class="notice notice-info" ng-hide="showLoader">
+                <ul class="list-inline">
+                    <li>
+                        <img src="{{obj.user.profile_image_url}}" class="user">
+                    </li>
+                    <li>
+                        <span><strong>{{obj.user.name}}</strong></span>
+                        <a target='_blank' ui-sref="http://twitter.com/{{obj.user.screen_name}}">@{{obj.user.screen_name}}</a>
+                    </li>
+                </ul>
+                <span class="tweet-text">{{obj.text}}</span>
+            </div>
+        </div>
+        <!--/panel-body-->
+    </div>
+    <!--/panel-->
+</div>
+<!--/container-->

@@ -1,2 +1,2 @@
 'use strict';
-angular.module('tweet', []);
+angular.module('tweet', ['site']);

@@ -1,62 +1,13 @@
-.notice {
-    padding: 15px;
-    background-color: #fafafa;
-    border-left: 6px solid #7f7f84;
-    margin: 5px 5px;
-    -webkit-box-shadow: 0 5px 8px -6px rgba(0, 0, 0, .2);
-    -moz-box-shadow: 0 5px 8px -6px rgba(0, 0, 0, .2);
-    box-shadow: 0 5px 8px -6px rgba(0, 0, 0, .2);
+.topic .notice {
+    min-height: 80px;
     width: 32%;
-    float: left;
 }
 
-.notice-sm {
-    padding: 10px;
-    font-size: 80%;
-}
-
-.notice-lg {
-    padding: 35px;
-    font-size: large;
-}
-
-.notice-success {
-    border-color: #80D651;
-}
-
-.notice-success>strong {
-    color: #80D651;
-}
-
-.notice-info {
-    border-color: #45ABCD;
-}
-
-.notice-info>strong {
-    color: #45ABCD;
-}
-
-.notice-warning {
-    border-color: #FEAF20;
-}
-
-.notice-warning>strong {
-    color: #FEAF20;
-}
-
-.notice-danger {
-    border-color: #d73814;
-}
-
-.notice-danger>strong {
-    color: #d73814;
-}
-
-.topic-list li>span {
+.topic .list-inline li>span {
     display: block;
     text-align: center;
 }
 
-.topic-list li>span:first-child {
+.topic .list-inline li>span:first-child {
     color: #808080;
 }

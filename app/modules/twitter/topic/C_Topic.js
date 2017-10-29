@@ -4,11 +4,11 @@ module.exports = function(options) {
         router = options.router,
         Twit = options.twit;
     router.get('/getTrendingTopics', function(req, res) {
-        // returns rending topics.
+        // returns trending topics.
         Twit.get('trends/place', _.assignIn({
             id: 1940345,
-            limit: 25
-        }, req.params), function(err, data, response) {
+            count: 25
+        }, req.query), function(err, data, response) {
             try {
                 res.json({
                     RESULT_CODE: '1',
