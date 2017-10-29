@@ -8,6 +8,5 @@ Project is about, get top 25 trending topics in Dubai using Twitter open APIs an
 
 ### Demo.
 ---------------------------------------
-<a href="http://www.youtube.com/watch?feature=player_embedded&v=RLLkS2-vl-c" target="_blank"><img src="http://img.youtube.com/vi/RLLkS2-vl-c/1.jpg" 
-alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a>
+![alt text](https://github.com/kevalbhatt/node-angular-socket-twit/blob/master/Demo.gif "Logo Title Text 1")
 
